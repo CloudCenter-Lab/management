@@ -1,6 +1,12 @@
 # management
 ## 项目目标
 This project develops a management system for devices used in intelligent transportation.
+# 项目配置
+1.. Java 1.8 
+2.  SpringBooT 2.1.3
+3.  Mysql
+4.  Hyperledger Fabric 1.4+Java-sdk
+5.  前段框架待定
 
 ## 小组成员
 ZY ZZM YLJ NRJ OY 
@@ -19,4 +25,5 @@ ZY ZZM YLJ NRJ OY
 
 
 ## 工作进度
-1. zy [[ZY工作进度]]
+1.  ZY [[ZY工作进度]]
+
