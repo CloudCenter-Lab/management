@@ -2,8 +2,7 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-
-<mapper namespace="com.gh.management.system.mapper.UserMapper">
+<mapper namespace="com.gh.management.system.mapper.LoginFoMapper">
 
     <resultMap id="UserEntityMap" type="com.gh.management.system.entity.User">
         <id column="uid" property="uid"/>
@@ -13,15 +12,7 @@
         <result column="modified_time" property="modifiedTime"/>
     </resultMap>
 
-   <insert id="insert" useGeneratedKeys="true" keyProperty="uid">
-       INSERT INTO sys_user(username, password, salt, phone, email, gender, avatar, available,address,type,
-       created_user, created_time, modified_user, modified_time)
-       VALUES (#{username}, #{password}, #{salt}, #{phone}, #{email}, #{gender}, #{avatar}, #{available},#{address},#{type},
-               #{createdUser}, #{createdTime}, #{modifiedUser}, #{modifiedTime})
-   </insert>
-
     <select id="findByUsername" resultMap="UserEntityMap">
         SELECT * FROM sys_user WHERE username = #{username}
     </select>
-
 </mapper>
