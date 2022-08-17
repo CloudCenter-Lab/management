@@ -1,28 +1,16 @@
 package com.gh.management.system.mapper;
 
-
 import com.gh.management.system.entity.User;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**
+ * <p>
+ *  Mapper 接口
+ * </p>
+ *
  * @author YJL
- * @create 2022-08-10 12:08
+ * @since 2022-08-17
  */
-
-public interface UserMapper {
-
-    /**
-     * 新增用户信息
-     * @param user
-     * @return
-     */
-    Integer insert(User user);
-
-
-    /**
-     * 通过username查询用户
-     * @param username
-     * @return
-     */
-    User findByUsername(String username);
+public interface UserMapper extends BaseMapper<User> {
 
 }

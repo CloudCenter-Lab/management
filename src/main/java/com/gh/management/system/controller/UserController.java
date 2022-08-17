@@ -1,34 +1,79 @@
 package com.gh.management.system.controller;
 
 
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import org.springframework.web.bind.annotation.*;
+import javax.annotation.Resource;
+import java.util.List;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+
+import com.gh.management.system.service.IUserService;
 import com.gh.management.system.entity.User;
-import com.gh.management.system.service.UserService;
-import com.gh.management.system.util.JsonResult;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
+
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.servlet.http.HttpSession;
-
 /**
+ * <p>
+ *  前端控制器
+ * </p>
+ *
  * @author YJL
- * @create 2022-08-10 12:08
+ * @since 2022-08-17
  */
-
-/** 处理用户相关请求的控制器类 */
 @RestController
-@RequestMapping("users")
-public class UserController extends BaseController {
-    @Autowired
-    private UserService userService;
+@RequestMapping("/user")
+        public class UserController {
+    
+    @Resource
+    private IUserService userService;
 
-    @RequestMapping("reg")
-    public JsonResult<Void> reg(User user) {
-        // 调用业务对象执行注册
-        userService.reg(user);
-        // 返回
-        return new JsonResult<Void>(OK);
+    // 新增或者更新
+    @PostMapping
+    public boolean save(@RequestBody User user) {
+            return userService.saveOrUpdate(user);
+            }
+
+    @DeleteMapping("/{id}")
+    public Boolean delete(@PathVariable Integer id) {
+            return userService.removeById(id);
+            }
+
+    @PostMapping("/del/batch")
+    public boolean deleteBatch(@RequestBody List<Integer> ids) {
+            return userService.removeByIds(ids);
+            }
+
+    @GetMapping
+    public List<User> findAll() {
+            return userService.list();
+            }
+
+    @GetMapping("/{id}")
+    public User findOne(@PathVariable Integer id) {
+            return userService.getById(id);
+            }
+
+    @GetMapping("/page")
+    public Page<User> findPage(@RequestParam Integer pageNum,
+                               @RequestParam Integer pageSize,
+                               @RequestParam(defaultValue = "") String username,
+                               @RequestParam(defaultValue = "") String email,
+                               @RequestParam(defaultValue = "") String address) {
+
+        QueryWrapper<User> queryWrapper = new QueryWrapper<>();
+        queryWrapper.orderByAsc("id");
+        if (!"".equals(username)) {
+            queryWrapper.like("username", username);
+        }
+        if (!"".equals(email)) {
+            queryWrapper.like("email", email);
+        }
+        if (!"".equals(address)) {
+            queryWrapper.like("address", address);
+        }
+
+        return userService.page(new Page<>(pageNum,pageSize),queryWrapper);
     }
 
+            }
 
-}

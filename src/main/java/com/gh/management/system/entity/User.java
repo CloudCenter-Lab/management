@@ -1,152 +1,64 @@
 package com.gh.management.system.entity;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
 import java.io.Serializable;
-import java.util.Objects;
+import java.time.LocalDateTime;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
+ * <p>
+ * 
+ * </p>
+ *
  * @author YJL
- * @create 2022-08-10 12:08
+ * @since 2022-08-17
  */
+@Getter
+@Setter
+  @TableName("sys_user")
+@ApiModel(value = "User对象", description = "")
+public class User implements Serializable {
 
-public class User extends BaseEntity implements Serializable {
-    private Integer uid;
-    private String username;
-    private String password;
-    private String salt;
-    private String phone;
-    private String email;
-    private Integer gender;
-    private String avatar;
-    private Integer available;
-    private String address;
-    private Integer type;
+    private static final long serialVersionUID = 1L;
 
-    public Integer getAvailable() {
-        return available;
-    }
+      @ApiModelProperty("id")
+        @TableId(value = "id", type = IdType.AUTO)
+      private Integer id;
 
-    public void setAvailable(Integer available) {
-        this.available = available;
-    }
+      @ApiModelProperty("用户名")
+      private String username;
 
-    public String getAddress() {
-        return address;
-    }
+      @ApiModelProperty("密码")
+      private String password;
 
-    public void setAddress(String address) {
-        this.address = address;
-    }
+      @ApiModelProperty("电话号码")
+      private String phone;
 
-    public Integer getType() {
-        return type;
-    }
+      @ApiModelProperty("邮箱")
+      private String email;
 
-    public void setType(Integer type) {
-        this.type = type;
-    }
+      @ApiModelProperty("性别")
+      private String gender;
 
-    public Integer getUid() {
-        return uid;
-    }
+      @ApiModelProperty("是否可用")
+      private Integer available;
 
-    public void setUid(Integer uid) {
-        this.uid = uid;
-    }
+      @ApiModelProperty("地址")
+      private String address;
 
-    public String getUsername() {
-        return username;
-    }
+      @ApiModelProperty("头像")
+      private String avatar;
 
-    public void setUsername(String username) {
-        this.username = username;
-    }
+      @ApiModelProperty("创建人")
+      private String createdUser;
 
-    public String getPassword() {
-        return password;
-    }
+      @ApiModelProperty("创建时间")
+      private LocalDateTime createdTime;
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
 
-    public String getSalt() {
-        return salt;
-    }
-
-    public void setSalt(String salt) {
-        this.salt = salt;
-    }
-
-    public String getPhone() {
-        return phone;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public Integer getGender() {
-        return gender;
-    }
-
-    public void setGender(Integer gender) {
-        this.gender = gender;
-    }
-
-    public String getAvatar() {
-        return avatar;
-    }
-
-    public void setAvatar(String avatar) {
-        this.avatar = avatar;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        if (!super.equals(o)) return false;
-        User user = (User) o;
-        return Objects.equals(uid, user.uid) &&
-                Objects.equals(username, user.username) &&
-                Objects.equals(password, user.password) &&
-                Objects.equals(salt, user.salt) &&
-                Objects.equals(phone, user.phone) &&
-                Objects.equals(email, user.email) &&
-                Objects.equals(gender, user.gender) &&
-                Objects.equals(avatar, user.avatar) &&
-                Objects.equals(available, user.available) &&
-                Objects.equals(address, user.address) &&
-                Objects.equals(type, user.type);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(super.hashCode(), uid, username, password, salt, phone, email, gender, avatar, available, address, type);
-    }
-
-    @Override
-    public String toString() {
-        return "User{" +
-                "uid=" + uid +
-                ", username='" + username + '\'' +
-                ", password='" + password + '\'' +
-                ", salt='" + salt + '\'' +
-                ", phone='" + phone + '\'' +
-                ", email='" + email + '\'' +
-                ", gender=" + gender +
-                ", avatar='" + avatar + '\'' +
-                ", available=" + available +
-                ", address='" + address + '\'' +
-                ", type=" + type +
-                '}';
-    }
 }
