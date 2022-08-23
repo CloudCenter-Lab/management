@@ -4,13 +4,13 @@
     "type": "split",
     "children": [
       {
-        "id": "c4ca93cc62c6e2dc",
+        "id": "48d7d24f5e9c3922",
         "type": "leaf",
         "state": {
           "type": "markdown",
           "state": {
-            "file": "work progress/工作进度.md",
-            "mode": "preview",
+            "file": "README.md",
+            "mode": "source",
             "source": false
           }
         }
@@ -61,7 +61,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 100
   },
   "right": {
     "id": "cf83dad15d26b3da",
@@ -77,7 +77,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "work progress/工作进度.md",
+                "file": "README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -94,7 +94,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "work progress/工作进度.md",
+                "file": "README.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -117,7 +117,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "work progress/工作进度.md"
+                "file": "README.md"
               }
             }
           }
@@ -125,17 +125,16 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
-  "active": "c4ca93cc62c6e2dc",
+  "active": "48d7d24f5e9c3922",
   "lastOpenFiles": [
     "README.md",
+    "work progress/工作进度.md",
     "work progress/imgs/4.jpg",
     "work progress/imgs/3.jpg",
     "work progress/imgs/2.png",
     "work progress/imgs/1.png",
-    "HELP.md",
-    "work progress/工作进度.md"
+    "HELP.md"
   ]
 }
