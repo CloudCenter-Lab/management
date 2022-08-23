@@ -4,13 +4,13 @@
     "type": "split",
     "children": [
       {
-        "id": "48d7d24f5e9c3922",
+        "id": "f1baf9f0af241671",
         "type": "leaf",
         "state": {
           "type": "markdown",
           "state": {
             "file": "README.md",
-            "mode": "source",
+            "mode": "preview",
             "source": false
           }
         }
@@ -127,7 +127,7 @@
     "direction": "horizontal",
     "width": 300
   },
-  "active": "48d7d24f5e9c3922",
+  "active": "f1baf9f0af241671",
   "lastOpenFiles": [
     "README.md",
     "work progress/工作进度.md",

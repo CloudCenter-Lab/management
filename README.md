@@ -27,11 +27,11 @@ ZY ZZM YLJ NRJ OY
 3.  设备管理
 4.  网关管理
 ### 区块链客户端
-#### 1.  区块链交互
+1. 区块链交互
 （1）使用Java-SDK实现与链码交互：链码交互分为query和invoke两种，传入参数为两部分：链码函数的名称；链码参数，args[].
 （2）链码参数的传入方式：将参数编码为string传入，推荐Base64编码。
-#### 区块链部署与开发
-1.  Hyperledger Fabric 链码开发
+2. 区块链部署与开发
+（1）Hyperledger Fabric 链码开发
 2.  区块链配置
 
 
