@@ -7,6 +7,7 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -18,9 +19,9 @@ import lombok.Setter;
  * @author YJL
  * @since 2022-08-17
  */
-@Getter
-@Setter
-  @TableName("sys_user")
+
+@Data
+@TableName("sys_user")
 @ApiModel(value = "User对象", description = "")
 public class User implements Serializable {
 
@@ -46,7 +47,7 @@ public class User implements Serializable {
       private String gender;
 
       @ApiModelProperty("是否可用")
-      private Integer available;
+      private String available;
 
       @ApiModelProperty("地址")
       private String address;
