@@ -1,3 +1,6 @@
+server:
+  port: 9000
+
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -12,12 +15,10 @@ spring:
         dialect: org.hibernate.dialect.MySQLDialect
     show-sql: true
 
-
-server:
-  port: 9000
-
-mybatis:
-  mapper-locations: classpath:/mapper/*.xml
+mybatis-plus:
+  configuration:
+    # 配置MyBatis日志
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 
 initial:
   eccType: secp256r1

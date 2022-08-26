@@ -1,16 +1,18 @@
 package com.gh.management.system.mapper;
 
-import com.gh.management.system.entity.User;
+import com.gh.management.system.pojo.User;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**
- * <p>
- *  Mapper 接口
- * </p>
- *
  * @author YJL
- * @since 2022-08-17
+ * @create 2022-08-26 10:45
+ * @Entity com.gh.management.system.pojo.User
  */
 public interface UserMapper extends BaseMapper<User> {
 
+
 }
+
+
+
+

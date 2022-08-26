@@ -1,20 +1,21 @@
 package com.gh.management.system.service.impl;
 
-import com.gh.management.system.entity.User;
-import com.gh.management.system.mapper.UserMapper;
-import com.gh.management.system.service.IUserService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.gh.management.system.pojo.User;
+import com.gh.management.system.service.UserService;
+import com.gh.management.system.mapper.UserMapper;
 import org.springframework.stereotype.Service;
 
 /**
- * <p>
- *  服务实现类
- * </p>
- *
  * @author YJL
- * @since 2022-08-17
+ * @create 2022-08-26 10:45
  */
 @Service
-public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IUserService {
+public class UserServiceImpl extends ServiceImpl<UserMapper, User>
+    implements UserService{
 
 }
+
+
+
+

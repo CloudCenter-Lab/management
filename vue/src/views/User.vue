@@ -31,7 +31,7 @@
             <el-table-column type="selection" width="55"></el-table-column>
             <el-table-column prop="id" label="ID" width="80"></el-table-column>
             <el-table-column prop="username" label="用户名" width="140"></el-table-column>
-            <el-table-column prop="gender" label="性别" width="120"></el-table-column>
+            <el-table-column prop="sex" label="性别" width="120"></el-table-column>
             <el-table-column prop="email" label="邮箱"></el-table-column>
             <el-table-column prop="phone" label="电话"></el-table-column>
             <el-table-column prop="address" label="地址"></el-table-column>
@@ -70,7 +70,7 @@
                     <el-input v-model="form.username" autocomplete="off"></el-input>
                 </el-form-item>
                 <el-form-item label="性别">
-                    <el-input v-model="form.gender" autocomplete="off"></el-input>
+                    <el-input v-model="form.sex" autocomplete="off"></el-input>
                 </el-form-item>
                 <el-form-item label="邮箱">
                     <el-input v-model="form.email" autocomplete="off"></el-input>
