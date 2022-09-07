@@ -9,7 +9,23 @@ spring:
     password: 12345678
   jpa:
     hibernate:
+<<<<<<< HEAD
       ddl-auto: create
+=======
+<<<<<<< HEAD
+      ddl-auto: create
+=======
+<<<<<<< HEAD
+      ddl-auto: create
+=======
+<<<<<<< HEAD
+      ddl-auto: create
+=======
+      ddl-auto: update
+>>>>>>> 01cba11 (submit)
+>>>>>>> e243474 (submit)
+>>>>>>> 890ad90 (submit)
+>>>>>>> b98947e (提交)
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQLDialect

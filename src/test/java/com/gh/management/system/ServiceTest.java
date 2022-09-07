@@ -1,8 +1,30 @@
 package com.gh.management.system;
 
+<<<<<<< HEAD
 import com.gh.management.system.pojo.Device;
 import com.gh.management.system.pojo.User;
 import com.gh.management.system.service.DeviceService;
+=======
+<<<<<<< HEAD
+import com.gh.management.system.pojo.Device;
+import com.gh.management.system.pojo.User;
+import com.gh.management.system.service.DeviceService;
+=======
+<<<<<<< HEAD
+import com.gh.management.system.pojo.Device;
+import com.gh.management.system.pojo.User;
+import com.gh.management.system.service.DeviceService;
+=======
+<<<<<<< HEAD
+import com.gh.management.system.pojo.Device;
+import com.gh.management.system.pojo.User;
+import com.gh.management.system.service.DeviceService;
+=======
+import com.gh.management.system.pojo.User;
+>>>>>>> 01cba11 (submit)
+>>>>>>> e243474 (submit)
+>>>>>>> 890ad90 (submit)
+>>>>>>> b98947e (提交)
 import com.gh.management.system.service.UserService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,8 +41,26 @@ public class ServiceTest {
 
     @Autowired
     private UserService userService;
+<<<<<<< HEAD
     @Autowired
     private DeviceService deviceService;
+=======
+<<<<<<< HEAD
+    @Autowired
+    private DeviceService deviceService;
+=======
+<<<<<<< HEAD
+    @Autowired
+    private DeviceService deviceService;
+=======
+<<<<<<< HEAD
+    @Autowired
+    private DeviceService deviceService;
+=======
+>>>>>>> 01cba11 (submit)
+>>>>>>> e243474 (submit)
+>>>>>>> 890ad90 (submit)
+>>>>>>> b98947e (提交)
     @Test
     public void save() {
 //        User user1=new User();
@@ -34,6 +74,16 @@ public class ServiceTest {
 //        System.out.println(b);
 //        boolean b = userService.removeById(14);
 //        System.out.println(b);
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> e243474 (submit)
+>>>>>>> 890ad90 (submit)
+>>>>>>> b98947e (提交)
         Device device=new Device();
         device.setCategory("1");
         device.setAuxiliaryData("hd");
@@ -46,6 +96,19 @@ public class ServiceTest {
 
 //        List<User> list = userService.list();
 //        list.forEach(System.out::println);
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+        List<User> list = userService.list();
+        list.forEach(System.out::println);
+>>>>>>> 01cba11 (submit)
+>>>>>>> e243474 (submit)
+>>>>>>> 890ad90 (submit)
+>>>>>>> b98947e (提交)
 
     }
 
