@@ -24,11 +24,5 @@
         available,address,avatar,
         created_user,created_time
     </sql>
-    <select id="getOneByUsername" resultMap="BaseResultMap">
-        select
-        <include refid="Base_Column_List"/>
-        from sys_user
-        where
-        username = #{username,jdbcType=VARCHAR}
-    </select>
+
 </mapper>

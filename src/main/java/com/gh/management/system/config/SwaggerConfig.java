@@ -5,55 +5,76 @@ import org.springframework.context.annotation.Configuration;
 import springfox.documentation.builders.ApiInfoBuilder;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
-import springfox.documentation.oas.annotations.EnableOpenApi;
-import springfox.documentation.service.ApiInfo;
-import springfox.documentation.service.Contact;
+import springfox.documentation.service.*;
 import springfox.documentation.spi.DocumentationType;
+import springfox.documentation.spi.service.contexts.SecurityContext;
 import springfox.documentation.spring.web.plugins.Docket;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
+
+import java.util.ArrayList;
+import java.util.List;
+
 /**
- * @author YJL
- * @create 2022-08-17 11:00
+ * Swagger2配置类
+ *
+ * @author
+ * @since 1.0.0
  */
 @Configuration
-@EnableOpenApi
+@EnableSwagger2
 public class SwaggerConfig {
 
-
-    /**
-     * 创建API应用
-     * apiInfo() 增加API相关信息
-     * 通过select()函数返回一个ApiSelectorBuilder实例,用来控制哪些接口暴露给Swagger来展现，
-     * 本例采用指定扫描的包路径来定义指定要建立API的目录。
-     *
-     * @return
-     */
     @Bean
-    public Docket restApi() {
+    public Docket createRestApi(){
         return new Docket(DocumentationType.SWAGGER_2)
-                .groupName("标准接口")
-                .apiInfo(apiInfo("Spring Boot中使用Swagger2构建RESTful APIs", "1.0"))
-                .useDefaultResponseMessages(true)
-                .forCodeGeneration(false)
+                .apiInfo(apiInfo())
                 .select()
                 .apis(RequestHandlerSelectors.basePackage("com.gh.management.system.controller"))
                 .paths(PathSelectors.any())
-                .build();
+                .build()
+                .securityContexts(securityContexts())
+                .securitySchemes(securitySchemes());
+
     }
 
-    /**
-     * 创建该API的基本信息（这些基本信息会展现在文档页面中）
-     * 访问地址：http://ip:port/swagger-ui.html
-     *
-     * @return
-     */
-    private ApiInfo apiInfo(String title, String version) {
+    private ApiInfo apiInfo(){
         return new ApiInfoBuilder()
-                .title(title)
-                .description("")
-                .termsOfServiceUrl("")
-                .version(version)
+                .title("接口文档")
+                .description("接口文档")
+                .contact(new Contact("","http:localhost:9000/doc.html",""))
+                .version("1.0")
                 .build();
     }
 
+    private List<ApiKey> securitySchemes(){
+        //设置请求头信息
+        List<ApiKey> result= new ArrayList<>();
+        ApiKey apiKey = new ApiKey("Authorization","Authorization","Header");
+        result.add(apiKey);
+        return result;
+    }
+
+    private List<SecurityContext> securityContexts(){
+        //设置需要登录认证的路径
+        List<SecurityContext> result = new ArrayList<>();
+        result.add(getContextByPath("/page"));
+        return result;
+    }
+
+    private SecurityContext getContextByPath(String pathRegex) {
+        return SecurityContext.builder()
+                .securityReferences(defaultAuth())
+                .forPaths(PathSelectors.regex(pathRegex))
+                .build();
+    }
+
+    private List<SecurityReference> defaultAuth() {
+        List<SecurityReference> result = new ArrayList<>();
+        AuthorizationScope authorizationScope = new AuthorizationScope("global","accessEverything");
+        AuthorizationScope[] authorizationScopes = new AuthorizationScope[1];
+        authorizationScopes[0] = authorizationScope;
+        result.add(new SecurityReference("Authorization",authorizationScopes));
+        return result;
+    }
 
 }

@@ -17,7 +17,6 @@
         <java.version>1.8</java.version>
     </properties>
 
-
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -27,7 +26,6 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
-
         <!--mybatis-plus-->
         <dependency>
             <groupId>com.baomidou</groupId>
@@ -53,21 +51,18 @@
             <artifactId>mysql-connector-java</artifactId>
             <scope>runtime</scope>
         </dependency>
-        <!-- swagger3 接口文档生成器 -->
+        <!-- swagger2 依赖 -->
         <dependency>
             <groupId>io.springfox</groupId>
-            <artifactId>springfox-boot-starter</artifactId>
-            <version>3.0.0</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.springframework.plugin</groupId>
-                    <artifactId>spring-plugin-core</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>org.springframework.plugin</groupId>
-                    <artifactId>spring-plugin-metadata</artifactId>
-                </exclusion>
-            </exclusions>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>2.7.0</version>
+
+        </dependency>
+        <!-- Swagger第三方ui依赖 -->
+        <dependency>
+            <groupId>com.github.xiaoymin</groupId>
+            <artifactId>swagger-bootstrap-ui</artifactId>
+            <version>1.9.6</version>
         </dependency>
         <!--使用hotool实现导入导出 -->
         <dependency>
@@ -80,11 +75,11 @@
             <artifactId>poi-ooxml</artifactId>
             <version>4.1.2</version>
         </dependency>
-<!--        &lt;!&ndash;security 依赖&ndash;&gt;-->
-<!--        <dependency>-->
-<!--            <groupId>org.springframework.boot</groupId>-->
-<!--            <artifactId>spring-boot-starter-security</artifactId>-->
-<!--        </dependency>-->
+        <!--security 依赖-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
         <!--JWT 依赖-->
         <dependency>
             <groupId>io.jsonwebtoken</groupId>
@@ -113,14 +108,13 @@
         <dependency>
             <groupId>org.springframework.plugin</groupId>
             <artifactId>spring-plugin-core</artifactId>
-            <version>2.0.0.RELEASE</version>
+            <version>1.2.0.RELEASE</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.plugin</groupId>
             <artifactId>spring-plugin-metadata</artifactId>
-            <version>2.0.0.RELEASE</version>
+            <version>1.2.0.RELEASE</version>
         </dependency>
-
     </dependencies>
 
     <build>
