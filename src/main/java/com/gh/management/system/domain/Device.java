@@ -1,16 +1,14 @@
-package com.gh.management.system.pojo;
+package com.gh.management.system.domain;
 
 import lombok.Data;
 
 @Data
-public class GateWay {
+public class Device {
     private Integer id;
-    private String gid;
+    private String eid;
     private String ip;
     private String category;
     private String pk;
-    private String sk;
-    private String skp;
     private Long validTime;
     private String auxiliaryData;
 }

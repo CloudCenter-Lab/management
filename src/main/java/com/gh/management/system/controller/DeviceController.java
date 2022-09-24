@@ -2,7 +2,7 @@ package com.gh.management.system.controller;
 
 
 import com.gh.management.system.mapper.DeviceMapper;
-import com.gh.management.system.pojo.Device;
+import com.gh.management.system.domain.Device;
 import com.gh.management.system.service.DeviceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

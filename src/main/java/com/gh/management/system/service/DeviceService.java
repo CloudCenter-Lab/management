@@ -1,7 +1,7 @@
 package com.gh.management.system.service;
 
 import com.gh.management.system.mapper.DeviceMapper;
-import com.gh.management.system.pojo.Device;
+import com.gh.management.system.domain.Device;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

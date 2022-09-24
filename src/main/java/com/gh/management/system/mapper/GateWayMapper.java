@@ -1,6 +1,6 @@
 package com.gh.management.system.mapper;
 
-import com.gh.management.system.pojo.GateWay;
+import com.gh.management.system.domain.GateWay;
 import org.apache.ibatis.annotations.*;
 
 import java.util.List;

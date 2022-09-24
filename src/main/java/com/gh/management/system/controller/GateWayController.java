@@ -2,7 +2,7 @@ package com.gh.management.system.controller;
 
 
 import com.gh.management.system.mapper.GateWayMapper;
-import com.gh.management.system.pojo.GateWay;
+import com.gh.management.system.domain.GateWay;
 import com.gh.management.system.service.GateWayService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

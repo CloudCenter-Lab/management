@@ -1,55 +1,35 @@
 package com.gh.management.system.controller;
 
-import com.gh.management.system.pojo.RespBean;
-import com.gh.management.system.pojo.User;
-import com.gh.management.system.pojo.UserLoginParam;
-import com.gh.management.system.service.UserService;
+import com.gh.management.system.domain.User;
+import com.gh.management.system.domain.param.ResponseResult;
+import com.gh.management.system.service.LoginService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
 
-import javax.annotation.Resource;
-import java.security.Principal;
+
 
 /**
  * @author YJL
- * @create 2022-08-29 9:01
+ * @create 2022-09-21 16:02
  */
 
+@Api(tags = "LoginController")
 @RestController
-@Api(value = "登录")
 public class LoginController {
 
+    @Autowired
+    private LoginService loginService;
 
 
-    @Resource
-    private UserService userService;
-
-
-    @ApiOperation(value = "登录接口")
+    @ApiOperation(value = "登录之后返回token")
     @PostMapping("/login")
-    public RespBean login(@RequestBody UserLoginParam loginParam){
-        return userService.login(loginParam.getUserName(),loginParam.getPassword());
+    public ResponseResult login(@RequestBody User user){
+        return loginService.login(user);
     }
 
-    @ApiOperation(value = "获取当前登录用户的信息")
-    @GetMapping("/user/info")
-    public User getUserInfo(Principal principal){
-        if (null==principal){
-            return null;
-        }
-        String username = principal.getName();
-        User user = userService.getUserByUserName(username);
-        user.setPassword(null);
-        return user;
-    }
-
-    @ApiOperation(value = "退出登录")
-    @GetMapping("/logout")
-    public RespBean logout(){
-        return RespBean.success("退出成功");
-    }
 
 }
-
-
