@@ -1,5 +1,4 @@
-server:
-  port: 9000
+
 
 spring:
   datasource:
@@ -7,7 +6,7 @@ spring:
       driver-class-name: com.mysql.cj.jdbc.Driver
       url: jdbc:mysql://101.35.89.157:3306/pufdemo?characterEncoding=utf-8&serverTimezone=GMT%2B8
       username: root
-      password: 12345678
+      password: seugoodwayhouse88
   jpa:
     hibernate:
       ddl-auto: update
@@ -23,6 +22,13 @@ mybatis-plus:
 
 initial:
   eccType: secp256r1
+
+
+server:
+  port: 9000
+
+netty:
+  port: 8500
 
 jwt:
 # JWT存储的请求头

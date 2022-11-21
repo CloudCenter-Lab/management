@@ -2,6 +2,7 @@ package com.gh.management.system.service;
 
 import com.gh.management.system.domain.User;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.gh.management.system.domain.param.RespBean;
 
 /**
  * @author YJL
@@ -11,4 +12,8 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface UserService extends IService<User> {
 
 
+
+    int saveUser(User user);
+
+    RespBean updatePwd(String firPwd, String secPwd);
 }

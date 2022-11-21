@@ -96,14 +96,23 @@
             <artifactId>hutool-all</artifactId>
             <version>5.8.5</version>
         </dependency>
+<!--        &lt;!&ndash;netty依赖&ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>io.netty</groupId>-->
+<!--            <artifactId>netty-all</artifactId>-->
+<!--            <version>4.1.0.Final</version>-->
+<!--        </dependency>-->
+        <dependency>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-all</artifactId>
+            <version>4.1.39.Final</version>
+        </dependency>
+
         <dependency>
             <groupId>org.apache.poi</groupId>
             <artifactId>poi-ooxml</artifactId>
             <version>4.1.2</version>
         </dependency>
-
-
-
         <dependency>
             <groupId>org.hyperledger.fabric-sdk-java</groupId>
             <artifactId>fabric-sdk-java</artifactId>
@@ -126,6 +135,8 @@
             <version>1.2.0.RELEASE</version>
         </dependency>
     </dependencies>
+
+
 
     <build>
         <plugins>

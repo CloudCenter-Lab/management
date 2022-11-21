@@ -6,6 +6,7 @@ import cn.hutool.poi.excel.ExcelUtil;
 import cn.hutool.poi.excel.ExcelWriter;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.gh.management.system.domain.User;
+import com.gh.management.system.domain.param.RespBean;
 import com.gh.management.system.service.UserService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -33,13 +34,24 @@ public class UserController {
     private UserService userService;
 
     @PostMapping
-    @ApiOperation("新增或修改用户")
+    @ApiOperation("修改用户")
     public boolean saveOrUpdate(@RequestBody User user) { return userService.saveOrUpdate(user); }
 
+    @PostMapping("/{firPwd}/{secPwd}")
+    @ApiOperation("修改密码")
+    public RespBean updatePwd(@PathVariable String firPwd,
+                              @PathVariable String secPwd){
+        return userService.updatePwd(firPwd,secPwd);
+    }
+
+
+    @PostMapping("/save")
+    @ApiOperation("新增用户")
+    public int saveUser(@RequestBody User user) { return userService.saveUser(user); }
 
     @DeleteMapping("/{id}")
     @ApiOperation("删除id")
-    public Boolean delete(@PathVariable Integer id) { return userService.removeById(id); }
+    public boolean delete(@PathVariable Integer id) { return userService.removeById(id); }
 
     @PostMapping("/del/batch")
     @ApiOperation("批量删除")
@@ -71,6 +83,8 @@ public class UserController {
         return userService.page(new Page<>(pageNum, pageSize), null);
 
     }
+
+
 
 
 //    /**
