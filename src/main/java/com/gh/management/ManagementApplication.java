@@ -13,8 +13,7 @@ import org.springframework.scheduling.annotation.EnableAsync;
 @SpringBootApplication
 @EnableAsync
 @MapperScan("com.gh.management.system.mapper")
-public class ManagementApplication  implements CommandLineRunner {
-
+public class ManagementApplication implements CommandLineRunner {
 
 
     @Autowired
@@ -29,29 +28,4 @@ public class ManagementApplication  implements CommandLineRunner {
     public void run(String... args) throws Exception {
         nettyServer.start();
     }
-//    @Override
-//    public void run(String... args) throws Exception {
-//        nettyServer.start();
-//    }
 }
-
-//@SpringBootApplication
-//@EnableAsync
-//@MapperScan("com.demo.netty.mapper") // 启动时扫描的mapper
-//public class NettyApplication implements CommandLineRunner {
-//
-//    @Autowired
-//    NettyServer nettyServer;
-//
-//
-//    public static void main(String[] args) {
-//        SpringApplication.run(NettyApplication.class, args);
-//        System.out.println("netty启动完成了----》");
-//    }
-//
-//    @Override
-//    public void run(String... args) throws Exception {
-//        nettyServer.start();
-//    }
-//
-//}

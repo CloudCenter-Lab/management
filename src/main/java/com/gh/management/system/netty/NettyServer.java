@@ -19,9 +19,6 @@ import java.nio.charset.StandardCharsets;
 
 /**
  * Netty服务   服务启动监听器
- * @author zl
- * @date 2019-12-11
- *
  */
 @Component
 public class NettyServer {
