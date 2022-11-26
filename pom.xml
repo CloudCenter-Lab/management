@@ -96,12 +96,7 @@
             <artifactId>hutool-all</artifactId>
             <version>5.8.5</version>
         </dependency>
-<!--        &lt;!&ndash;netty依赖&ndash;&gt;-->
-<!--        <dependency>-->
-<!--            <groupId>io.netty</groupId>-->
-<!--            <artifactId>netty-all</artifactId>-->
-<!--            <version>4.1.0.Final</version>-->
-<!--        </dependency>-->
+        <!--netty依赖-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-all</artifactId>

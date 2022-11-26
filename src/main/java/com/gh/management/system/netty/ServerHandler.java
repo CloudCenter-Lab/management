@@ -1,5 +1,6 @@
 package com.gh.management.system.netty;
 
+import com.gh.management.system.service.DeviceService;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.*;
@@ -8,6 +9,7 @@ import io.netty.handler.codec.bytes.ByteArrayEncoder;
 import io.netty.handler.codec.string.StringEncoder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import java.net.InetSocketAddress;
 import java.nio.charset.Charset;
@@ -21,6 +23,7 @@ import java.nio.charset.Charset;
 @Component
 @ChannelHandler.Sharable
 public class ServerHandler extends SimpleChannelInboundHandler<String> {
+
 
     private static Logger logger = LoggerFactory.getLogger(ServerHandler.class);
 
@@ -95,6 +98,7 @@ public class ServerHandler extends SimpleChannelInboundHandler<String> {
 
             if (innerCtx != null && innerCtx.channel().isActive()) {
                 logger.info("硬件组发送给认证端："+msg);
+
                 innerCtx.writeAndFlush(msg);
             }
         }
