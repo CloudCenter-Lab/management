@@ -15,7 +15,7 @@ This project develops a management system for devices used in intelligent transp
 5.  前段框架采用VUE
 
 ## 小组成员
-ZY ZZM YLJ NRJ OY 
+ZY ZZM YJL NRJ OY 
 ## Version 1 平台的基本搭建
 ### 前端开发
 1. 用户信息查询：（1）完成所有用户信息的查询与展示；（2）按类目展示，按照ID查询；
